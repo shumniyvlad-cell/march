@@ -16,7 +16,8 @@ const SITES = [
   { id: 'pdd', url: G + 'pdd-sdal/', pages: 2.5, dur: 8, settle: 5000 },
   { id: 'napor', url: G + 'napor/', pages: 2.2, dur: 8, settle: 4000 },
   { id: 'katka', url: G + 'katka/', pages: 4, dur: 9 },
-  { id: 'sotvori', url: G + 'sotvori-sebya/', pages: 4, dur: 9 },
+  // focus: доехать до блока и подержать кадр, пока он играет (переписка с тающей ценой)
+  { id: 'sotvori', url: G + 'sotvori-sebya/', focus: '#chat', dur: 2.6, hold: 9000 },
   { id: 'progon', url: G + 'progon/', pages: 3.5, dur: 9, settle: 4500 },
   { id: 'mvs', url: G + 'mvs-kz/', pages: 4.5, dur: 9 },
   { id: 'den', url: G + 'zapusk-za-den/', pages: 4, dur: 9 },
@@ -109,6 +110,8 @@ async function record(site) {
       for(let i=0;i<list.length;i++){ if(i>0){list[i].click(); await sl(900);} const el=inner(); if(el){await run(v=>{el.scrollTop=v},Math.min(el.scrollHeight-el.clientHeight,innerHeight*${site.pages}),${Math.round(site.dur * 1000)}/list.length*0.75);} await sl(500); }
       await sl(600); return ['tabs',list.length];
     }
+    const focus=${JSON.stringify(site.focus || '')};
+    if(focus){ const el=document.querySelector(focus); const r=el.getBoundingClientRect(); const to=Math.max(0,r.top+scrollY-(innerHeight-r.height)/2); await run(v=>window.scrollTo({top:v,behavior:'instant'}),to,${site.dur * 1000}); await sl(${site.hold || 6000}); return ['focus',to]; }
     if(max>80){ const to=Math.min(max,innerHeight*${site.pages}); await run(v=>window.scrollTo({top:v,behavior:'instant'}),to,${site.dur * 1000}); await sl(900); return [max,to]; }
     const el=inner(); if(el){ const to=Math.min(el.scrollHeight-el.clientHeight,innerHeight*${site.pages}); await run(v=>{el.scrollTop=v},to,${site.dur * 1000}); await sl(900); return ['inner',to]; }
     await sl(4000); return ['static',0];

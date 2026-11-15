@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Все работы March: сайты, приложения, боты и ИИ-агенты</title>
+<meta name="description" content="12 проектов March: сайты, веб-приложения, Telegram-боты и ИИ-инструменты. Каждый открывается вживую прямо на странице.">
+<meta name="theme-color" content="#000000">
+<link rel="stylesheet" href="css/fonts.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="pg-works">
+
+<header class="nav">
+  <div class="nav__in">
+    <a class="nav__logo" href="new.html">March</a>
+    <nav class="nav__links" aria-label="Разделы">
+      <a href="new.html#pain">Где теряются деньги</a>
+      <a href="new.html#fix">Решения и цены</a>
+      <a href="new.html#speed">Сроки</a>
+      <a href="#works" aria-current="page">Все работы</a>
+    </nav>
+    <a class="pill pill--sm" href="new.html#brief">Разобрать задачу</a>
+  </div>
+</header>
+
+<main>
+
+  <section class="works" id="works">
+    <div class="wrap">
+      <a class="back" href="new.html">На главную</a>
+      <div class="works__head">
+        <h1 class="h2" data-rv>Все работы.<br><span class="dim">Каждую можно открыть.</span></h1>
+        <div class="seg works__seg" role="group" aria-label="Тип работы" data-rv>
+          <button data-f="all" aria-pressed="true">Все</button>
+          <button data-f="site" aria-pressed="false">Сайты</button>
+          <button data-f="app" aria-pressed="false">Приложения</button>
+          <button data-f="ai" aria-pressed="false">ИИ</button>
+        </div>
+      </div>
+      <div class="grid"></div>
+    </div>
+  </section>
+
+  <section class="pocket" aria-label="Под телефон">
+    <div class="pocket__pin">
+      <div class="pocket__l">
+        <p class="pocket__k">Под телефон</p>
+        <div class="pocket__steps"></div>
+      </div>
+      <div class="iph pocket__iph"><div class="iph__in"><div class="iph__scr"></div></div></div>
+      <div class="pocket__r"><div class="pocket__nums"></div></div>
+    </div>
+    <div class="wrap pocket__mh"><h2 class="h2">И под телефон тоже.</h2></div>
+    <div class="pocket__m"></div>
+  </section>
+
+  <section class="brief brief--short" id="brief">
+    <div class="wrap">
+      <h2 class="h1" data-rv>Хотите так же?</h2>
+      <p class="lead" data-rv>Расскажите, где сейчас теряются деньги. <b>Ответим, что поставить и сколько это стоит.</b></p>
+      <div class="brief__go" data-rv>
+        <a class="pill pill--lg" href="new.html#brief">Разобрать мою задачу</a>
+        <a class="more" href="https://t.me/marchvlvv" target="_blank" rel="noopener">или сразу @marchvlvv</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap foot__in">
+    <span>March, AI-диджитал агентство. 2026</span>
+    <span><a href="new.html">Главная</a></span>
+    <span><a href="https://t.me/marchvlvv" target="_blank" rel="noopener">Telegram</a></span>
+    <span><a href="https://marchvlv.ru" target="_blank" rel="noopener">marchvlv.ru</a></span>
+  </div>
+</footer>
+
+<dialog class="viewer" aria-label="Живой просмотр работы">
+  <div class="viewer__sheet">
+    <div class="viewer__bar">
+      <div class="viewer__n"><b></b><span></span></div>
+      <div class="viewer__tools">
+        <div class="seg seg--sm" role="group" aria-label="Размер экрана">
+          <button data-mode="desk" aria-pressed="true">Компьютер</button>
+          <button data-mode="phone" aria-pressed="false">Телефон</button>
+        </div>
+        <a class="more viewer__out" target="_blank" rel="noopener">В новой вкладке</a>
+        <button class="rbtn viewer__x" aria-label="Закрыть"><svg viewBox="0 0 36 36"><path d="m12.5 12.5 11 11m0-11-11 11"/></svg></button>
+      </div>
+    </div>
+    <div class="viewer__body"><div class="viewer__f"><iframe title="Живой сайт работы" src="about:blank"></iframe></div></div>
+  </div>
+</dialog>
+
+<script type="module" src="js/app.js"></script>
+<script type="module">
+  if (['localhost', '127.0.0.1'].includes(location.hostname)) import('./js/dev-agentation.js');
+</script>
+</body>
+</html>
